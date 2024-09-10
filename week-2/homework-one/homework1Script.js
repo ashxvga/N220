@@ -1,5 +1,5 @@
-let ticketCost = 14.00;
-let numberOfTickets = 3;
+const ticketCost = 14.00;
+const numberOfTickets = 3;
 
 
 document.getElementById("ticketNum").innerHTML += numberOfTickets;
@@ -7,57 +7,58 @@ document.getElementById("ticketCost").innerHTML += ticketCost;
 document.getElementById("ttCost").innerHTML += ticketCost * numberOfTickets;
 
 //for the second problem
-//my variables using let as practiced in class
-let bankAccount = 235.87;
-let jacket = 70;
-let sweater = 55;
-let shirt = 35;
-let pants = 75;
-let skirt = 49;
-let sandals = 30;
-let shoes = 60;
+//my variables using const as practiced in class
+const bankAccount = 235.87;
+const jacket = 70;
+const sweater = 55;
+const shirt = 35;
+const pants = 75;
+const skirt = 49;
+const sandals = 30;
+const shoes = 60;
 
 document.getElementById("bank").innerHTML += "After purchasing the outfit, my bank account balance is $" + (bankAccount - (shirt+pants+shoes)).toFixed(2);
 //used the .toFixed to fix my rounding issues. It now displays the one from the hw
-let remainingFunds = (bankAccount - (shirt+pants+shoes)).toFixed(2);
+const remainingFunds = (bankAccount - (shirt+pants+shoes)).toFixed(2);
 //for my false response
-let canBuyJacket = remainingFunds - jacket >= 0;
+const canBuyJacket = remainingFunds - jacket >= 0;
 document.getElementById("addJacket").innerHTML += "Add Jacket: " + canBuyJacket;
 
 //for the third problem
-let pizzas = 4;
-let slicesPerPizza = 8;
-let totalSlices = pizzas * slicesPerPizza;
-let slicesPerStudent = 2.5;
 
-//used the Math.floor to fix the issue of having decimals
-let numberOfStudents = Math.floor(totalSlices / slicesPerStudent); 
-let leftoverSlices = totalSlices % slicesPerStudent;
+const totalPizzas = 4;
+const slicesPerPizza = 8;
+let slicesThatStudentCanEat = 2.5;
 
-document.getElementById("profPizza").innerText += "Students: " + numberOfStudents + "\n Rector: " + leftoverSlices;
+const totalSlices = totalPizzas * slicesPerPizza;
+const pizzaLeftOver = totalSlices % slicesThatStudentCanEat;
+const studentsFed = (totalSlices - pizzaLeftOver) / slicesThatStudentCanEat;
+
+
+document.getElementById("profPizza").innerText += "Students: " + studentsFed + "\n Rector: " + pizzaLeftOver;
 
 //for the fourth problem
 
-let adultCost = 12.00;
-let childCost = 6.00;
-let drinkCost = 1.50;
+const adultCost = 12.00;
+const childCost = 6.00;
+const drinkCost = 1.50;
 
-let adult = 2;
-let child = 1;
-let drinks = 3;
+const adult = 2;
+const child = 1;
+const drinks = 3;
 
-let totalCost = (adult * adultCost) + (child * childCost) + (drinks * drinkCost);
+const totalCost = (adult * adultCost) + (child * childCost) + (drinks * drinkCost);
 
 document.getElementById("Monty").innerText += "$" +totalCost;
 
 //for the fifth problem
-let week1 = 202.45;
-let week2 = 134.97;
-let week3 = 256.63;
-let week4 = 178.22;
+const week1 = 202.45;
+const week2 = 134.97;
+const week3 = 256.63;
+const week4 = 178.22;
 
-let tips = week1 + week2 + week3 + week4;
-//let average = tips / 4;
+const tips = week1 + week2 + week3 + week4;
+//const average = tips / 4;
 
 //document.getElementById("tips").innerText += "$" + average;
 //second way to do it
