@@ -21,3 +21,27 @@ let remainingFunds = bankAccount - (shirt+pants+shoes);
 let canBuyJacket = remainingFunds - jacket >= 0;
 document.getElementById("addJacket").innerHTML += "Add Jacket: " + canBuyJacket;
 
+//for the third problem
+let pizzas = 4;
+let slicesPerPizza = 8;
+let totalSlices = pizzas * slicesPerPizza;
+let slicesPerStudent = 2.5;
+
+let numberOfStudents = Math.floor(totalSlices / slicesPerStudent); 
+let leftoverSlices = totalSlices % slicesPerStudent;
+
+document.getElementById("profPizza").innerText += "Students: " + numberOfStudents + ", Rector: " + leftoverSlices;
+
+//for the fourth problem
+
+let adultCost = 12.00;
+let childCost = 6.00;
+let drinkCost = 1.50;
+
+let adult = 2;
+let child = 1;
+let drinks = 3;
+
+let totalCost = (adult * adultCost) + (child * childCost) + (drinks * drinkCost);
+
+document.getElementById("Monty").innerText += totalCost;
