@@ -7,7 +7,8 @@ document.getElementById("ticketCost").innerHTML += ticketCost;
 document.getElementById("ttCost").innerHTML += ticketCost * numberOfTickets;
 
 //for the second problem
-let bankAccount = 235.83;
+//my variables using let as practiced in class
+let bankAccount = 235.87;
 let jacket = 70;
 let sweater = 55;
 let shirt = 35;
@@ -17,6 +18,7 @@ let sandals = 30;
 let shoes = 60;
 
 document.getElementById("bank").innerHTML += "After purchasing the outfit, my bank account balance is $" + (bankAccount - (shirt+pants+shoes)).toFixed(2);
+//used the .toFixed to fix my rounding issues. It now displays the one from the hw
 let remainingFunds = (bankAccount - (shirt+pants+shoes)).toFixed(2);
 //for my false response
 let canBuyJacket = remainingFunds - jacket >= 0;
@@ -28,6 +30,7 @@ let slicesPerPizza = 8;
 let totalSlices = pizzas * slicesPerPizza;
 let slicesPerStudent = 2.5;
 
+//used the Math.floor to fix the issue of having decimals
 let numberOfStudents = Math.floor(totalSlices / slicesPerStudent); 
 let leftoverSlices = totalSlices % slicesPerStudent;
 
