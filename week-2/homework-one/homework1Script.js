@@ -16,7 +16,7 @@ let skirt = 49;
 let sandals = 30;
 let shoes = 60;
 
-document.getElementById("bank").innerHTML += "After purchasing the outfit, my bank account is $" + bankAccount - (shirt+pants+shoes);
+document.getElementById("bank").innerHTML += "After purchasing the outfit, my bank account balance is $" + bankAccount - (shirt+pants+shoes);
 let remainingFunds = bankAccount - (shirt+pants+shoes);
 let canBuyJacket = remainingFunds - jacket >= 0;
 document.getElementById("addJacket").innerHTML += "Add Jacket: " + canBuyJacket;
@@ -45,3 +45,16 @@ let drinks = 3;
 let totalCost = (adult * adultCost) + (child * childCost) + (drinks * drinkCost);
 
 document.getElementById("Monty").innerText += totalCost;
+
+//for the fifth problem
+let week1 = 202.45;
+let week2 = 134.97;
+let week3 = 256.63;
+let week4 = 178.22;
+
+let tips = week1 + week2 + week3 + week4;
+let average = tips / 4;
+
+document.getElementById("tips").innerText += "Weekly Tip Average: $" + average;
+//second way to do it
+document.getElementById("tips").innerText += "Weekly Tip Average: $" + tips / 4;
