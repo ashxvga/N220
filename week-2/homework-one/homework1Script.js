@@ -1,23 +1,24 @@
 let ticketCost = 14.00;
 let numberOfTickets = 3;
-let total = ticketCost * numberOfTickets;
 
-document.getElementById("ticketNum").innerHTML += "Tickets: " + numberOfTickets;
-document.getElementById("ticketCost").innerHTML += "Cost: " + ticketCost;
-document.getElementById("ttCost").innerHTML += "Total: " + total;
+
+document.getElementById("ticketNum").innerHTML += numberOfTickets;
+document.getElementById("ticketCost").innerHTML += ticketCost;
+document.getElementById("ttCost").innerHTML += ticketCost * numberOfTickets;
 
 //for the second problem
 let bankAccount = 235.83;
 let jacket = 70;
-let sweater = 50
+let sweater = 55;
 let shirt = 35;
 let pants = 75;
 let skirt = 49;
 let sandals = 30;
 let shoes = 60;
 
-document.getElementById("bank").innerHTML += "After purchasing the outfit, my bank account balance is $" + bankAccount - (shirt+pants+shoes);
-let remainingFunds = bankAccount - (shirt+pants+shoes);
+document.getElementById("bank").innerHTML += "After purchasing the outfit, my bank account balance is $" + (bankAccount - (shirt+pants+shoes)).toFixed(2);
+let remainingFunds = (bankAccount - (shirt+pants+shoes)).toFixed(2);
+//for my false response
 let canBuyJacket = remainingFunds - jacket >= 0;
 document.getElementById("addJacket").innerHTML += "Add Jacket: " + canBuyJacket;
 
@@ -30,7 +31,7 @@ let slicesPerStudent = 2.5;
 let numberOfStudents = Math.floor(totalSlices / slicesPerStudent); 
 let leftoverSlices = totalSlices % slicesPerStudent;
 
-document.getElementById("profPizza").innerText += "Students: " + numberOfStudents + ", Rector: " + leftoverSlices;
+document.getElementById("profPizza").innerText += "Students: " + numberOfStudents + "\n Rector: " + leftoverSlices;
 
 //for the fourth problem
 
@@ -44,7 +45,7 @@ let drinks = 3;
 
 let totalCost = (adult * adultCost) + (child * childCost) + (drinks * drinkCost);
 
-document.getElementById("Monty").innerText += totalCost;
+document.getElementById("Monty").innerText += "$" +totalCost;
 
 //for the fifth problem
 let week1 = 202.45;
@@ -53,8 +54,8 @@ let week3 = 256.63;
 let week4 = 178.22;
 
 let tips = week1 + week2 + week3 + week4;
-let average = tips / 4;
+//let average = tips / 4;
 
-document.getElementById("tips").innerText += "Weekly Tip Average: $" + average;
+//document.getElementById("tips").innerText += "$" + average;
 //second way to do it
 document.getElementById("tips").innerText += "Weekly Tip Average: $" + tips / 4;
