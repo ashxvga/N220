@@ -108,3 +108,39 @@ printFriends();
 
 //OBJECTS!!!!
 
+const person = {
+    firstName: "Ashley",
+    lastName: "Vega",
+    age: 19,
+    hometown: "La Ceiba",
+    getFullName() //method that belongs to the person object
+    {
+        return `${this.firstName} ${this.lastName}`
+    },
+};
+//show full name
+document.getElementById("fullName").innerHTML += person.getFullName();
+
+//2. change value 
+person.age += 1;
+document.getElementById("newFProp").innerHTML += person.age;
+
+//3. Printing object variables
+//Printing object variables use the JSON.stringify method
+document.getElementById("newFProp").innerHTML += `<br/> ${JSON.stringify(person)}`;
+
+//4. Remove property from person using delete keyword
+delete person.hometown;
+document.getElementById("newFProp").innerHTML += `<br/> ${JSON.stringify(person)}`;
+
+//5. print a sentence using our object
+console.log(`${person.getFullName()} is ${person.age} years old.`);
+
+//6. add a method to an existing object
+person.isASenior = function(){
+    return this.age >= 65;
+}
+console.log(person.isASenior()); //returns false
+person.age += 50; //adds to their age
+console.log(person.isASenior()); //returns true
+console.log(person["age"]);
