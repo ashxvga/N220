@@ -62,3 +62,49 @@ printAnswer(totalOfGrades/studentGrades.length);
 //10. Using the answer to the last question, 
 //write the result of wether your average is above 80. (Answer should be true or false)
 printAnswer(averageGrades>80);
+
+//ARRAY MORE
+
+//0. Create an array with 6 values.
+const friends = ["Elmo", "Spongebob", "CatDog", "Danny Phantom", "Timmy Turner"];
+
+function printFriends(){
+    document.querySelector("#extraAnswers").innerHTML += `<br/> ${friends}`;
+}
+//1. Add a value to the end of array.
+friends.push("Jimmy Neutron");
+printFriends();
+//2. Take out the last value
+friends.pop();
+printFriends();
+
+//3. Take out the first value: Using the splice method
+friends.splice(0, 1); //value of where you want to start + how many you want to delete
+printFriends();
+
+//4. Put in the first value of an array
+friends.splice(0,0, "Invadez Zim"); //doesnt delete because of the 0, but adds the string
+printFriends();
+
+//5. Delete the third value of the array
+friends.splice(2,1);
+printFriends();
+
+//6. Add a value in the middle of the array
+friends.splice(2,0,"Gir");
+printFriends();
+//if we wanted to add multiple at the same time
+//friends.splice(3,0,["Patrick", "Squidward"]);
+//printFriends();
+
+//splice method takes 3 parameters
+//1. What index it starts at
+//2. How many elements starting from that index should be deleted
+//3. What to add to the array (This could be just a value or an array)
+
+//7. Delete a value in the middle of the array
+friends.splice(3,1,["Patrick", "Squidward"]); //deleted one and added 2
+printFriends();
+
+//OBJECTS!!!!
+
