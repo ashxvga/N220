@@ -1,0 +1,23 @@
+/*My css file to make it look more like the example from the hw */
+body{
+    background-color: rgb(157, 154, 154);
+}
+input[type="button"] {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+label {
+    text-align: right;
+    margin-right:15px;
+    float:left;
+}
+/* Used to align the input boxes*/
+.formStyle input{
+    margin-left: 100px;
+}
+.formStyle label
+{
+    position: absolute;
+}
