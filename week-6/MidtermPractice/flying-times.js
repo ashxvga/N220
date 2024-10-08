@@ -17,5 +17,5 @@ function addTime(){
         }
         return sum / flightTimes.length;
     }
-    document.getElementById("averageTime").innerHTML += "Average Time: " + averageTime(flightTimes) + "<br/>";
+    document.getElementById("averageTime").innerHTML = "Average Time: " + averageTime(flightTimes) + "<br/>";
 }
