@@ -15,8 +15,7 @@ window.onload = function startStory(){
         storyElement.innerHTML += "<br>You decided to get a closer look through the glass door";
         //Ask them to make another decision
 
-        const watchingBunny = prompt(`The bunny notices you and stops eating.
-            What do you want to do?
+        const watchingBunny = prompt(`The bunny notices you and stops eating. What do you want to do?
             \n(Enter the number of your choice)
             \n 1. Stay still to keep looking at it
             \n 2. Open the door to get a closer look`);
@@ -27,7 +26,6 @@ window.onload = function startStory(){
         {
             storyElement.innerHTML += "<br>You stayed still, and the bunny continues eating.";
             const takePhoto = prompt(`Do you want to take a picture of the bunny?
-                What do you want to do?
                 \n(Enter the number of your choice)
                 \n 1. Yes
                 \n 2. No`);
