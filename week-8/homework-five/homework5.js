@@ -1,5 +1,5 @@
 //To make the it start as soon I open the page
-window.onload = function startStory(){
+function startStory(){
     //my constant to keep track of the p tag
     const storyElement = document.getElementById("story");
 
@@ -45,6 +45,7 @@ window.onload = function startStory(){
                 {
                     storyElement.innerHTML += "<br>You got a better look and take a cute picture of the bunny using the zoom on your phone!";
                     //a picture will show up (Actual picture from my story)
+                    //unique ending!
                     document.getElementById("imgPic").src = "BUNNYPIC.jpeg"
                 }
                 //if they choose the carrots
@@ -81,7 +82,7 @@ window.onload = function startStory(){
             const openDoor = confirm(`Are you sure you want to open the door?`)
             if(openDoor)
                 {
-                    storyElement.innerHTML += "<br>The door makes a sound as you are opening it, and the bunny gets scared and runs away! Try again :(";
+                    storyElement.innerHTML += "<br>You decided to open the door. The door makes a sound as you are opening it, and the bunny gets scared and runs away! Try again :(";
                 }
                 else
                 {
