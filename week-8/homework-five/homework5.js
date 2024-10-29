@@ -33,6 +33,35 @@ window.onload = function startStory(){
             if(takePhoto == 1)
             {
                 storyElement.innerHTML += "<br>You decided to take a photo of the bunny through the glass door.";
+                //extra credit
+                //my three tools: zoom camera, carrots, apples
+                const toolChoice = prompt(`To interact more with the bunny, choose a tool to use:
+                    \n(Enter the number of your choice)
+                    \n 1. Phone zoom
+                    \n 2. Carrots
+                    \n 3. Apples`);
+                //if they choose the zoom    
+                if(toolChoice === "1")
+                {
+                    storyElement.innerHTML += "<br>You got a better look and take a cute picture of the bunny using the zoom on your phone!";
+                    //a picture will show up (Actual picture from my story)
+                    document.getElementById("imgPic").src = "BUNNYPIC.jpeg"
+                }
+                //if they choose the carrots
+                else if(toolChoice == "2")
+                {
+                    storyElement.innerHTML += "<br>You hold up some little pieces carrots. The bunny notices and looks interested but doesn’t get any closer.";
+                }
+                //if they choose the apples
+                else if(toolChoice == "3")
+                {
+                    storyElement.innerHTML +="<br>You hold up some pieces of apple, but the bunny seems uninterested and continues eating the grass.";
+                }
+                //if they choose a wrong number 
+                else
+                {
+                    storyElement.innerHTML +="<br>Invalid choice. The bunny continues eating without noticing you.";
+                }
             }
             //not taking picture, just looking at it
             else if(takePhoto == 2)
