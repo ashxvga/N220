@@ -68,12 +68,52 @@ window.onload = function startStoty(){
             \n (Enter the number of your choice)
             \n 1. Takis
             \n 2. Cookies`);
-
+            //snack choices
+            //if they choose takis
             if(snacks == 1)
             {
                 storyElement.innerHTML += "You decided to some takis, enjoy them!";
             }
+            //if they choose cookies
+            else if(snacks == 2)
+            {
+                storyElement.innerHTML += "You decided to some cookies, enjoy them!";
+            }
+            //if they enter a wrong number
+            else
+            {
+                storyElement.innerHTML += "Invalid choice, try again!";
+            }
         }
+        //if they choose to leave the kitchen
+        else if(notWatchingBunny == 2)
+        {
+            storyElement.innerHTML += "You decided to not get a closer look through the glass door. How boring!";
+            const anotherActivity = promt(`As you decided to leave the kitchen, what do what to do next?
+                \n (Enter the number of your choice)
+                \n 1. Go to Sleep
+                \n 2. Do your homework`)
+            //if they choose to go to sleep
+            if(anotherActivity == 1)
+            {
+                storyElement.innerHTML += "You decided to go to sleep, hope you can rest!";
+            }
+            //if they choose to do their hw
+            else if(snacks == 2)
+            {
+                storyElement.innerHTML += "You decided to do your homework, what a good student!";
+            }
+            //if they enter a wrong number
+            else
+            {
+                storyElement.innerHTML += "Invalid choice, try again!";
+            }
+        }
+    }
+    //if they choose a wrong number
+    else
+    {
+        storyElement.innerHTML += "Invalid choice, try again!";
     }
 
 
