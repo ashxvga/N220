@@ -110,12 +110,50 @@ window.onload = function startStory(){
             //if they choose takis
             if(snacks == 1)
             {
-                storyElement.innerHTML += "<br>You decided to some takis, enjoy them!";
+                storyElement.innerHTML += "<br>You decided to eat some takis, enjoy them!";
+                const drinks = prompt(`Now you found two types of drinks, which one do you want?
+                    \n (Enter the number of your choice)
+                    \n 1. Soda
+                    \n 2. Juice`);
+                    //if they choose soda
+                    if(drinks == 1)
+                    {
+                        storyElement.innerHTML += "<br>You decided to drink some soda, enjoy it!";
+                    }
+                    //if they choose juice
+                    else if(drinks == 2)
+                    {
+                        storyElement.innerHTML += "<br>You decided to drink some juice, enjoy it!";
+                    }
+                    //if they choose wrong number
+                    else
+                    {
+                        storyElement.innerHTML += "<br>Invalid choice, try again!";
+                    }
             }
             //if they choose cookies
             else if(snacks == 2)
             {
-                storyElement.innerHTML += "<br>You decided to some cookies, enjoy them!";
+                storyElement.innerHTML += "<br>You decided to eat some cookies, enjoy them!";
+                const drinks = prompt(`Now you found two types of drinks, which one do you want?
+                    \n (Enter the number of your choice)
+                    \n 1. Soda
+                    \n 2. Milk`);
+                    //if they choose soda
+                    if(drinks == 1)
+                    {
+                        storyElement.innerHTML += "<br>You decided to drink some soda, enjoy it!";
+                    }
+                    //if they choose juice
+                    else if(drinks == 2)
+                    {
+                        storyElement.innerHTML += "<br>You decided to drink some milk, enjoy it!";
+                    }
+                    //if they choose wrong number
+                    else
+                    {
+                        storyElement.innerHTML += "<br>Invalid choice, try again!";
+                    }
             }
             //if they enter a wrong number
             else
@@ -134,12 +172,50 @@ window.onload = function startStory(){
             //if they choose to go to sleep
             if(anotherActivity == 1)
             {
-                storyElement.innerHTML += "<br>You decided to go to sleep, hope you can rest!";
+                storyElement.innerHTML += "<br>You decided to go to sleep!";
+                const sleepOption = prompt(`How long will you sleep?
+                    \n (Enter the number of your choice)
+                    \n 1. 1-3 hours
+                    \n 2. 4-5 hours`);
+                    //if they choose 1-3h
+                    if(sleepOption == 1)
+                    {
+                        storyElement.innerHTML += "<br>You decided to sleep for 1-3 hours, hope you can rest!";
+                    }
+                    //if they choose 4-5
+                    else if(sleepOption == 2)
+                    {
+                        storyElement.innerHTML += "<br>You decided to sleep for 4-5 hours, hope you can rest!";
+                    }
+                    //if they choose wrong number
+                    else
+                    {
+                        storyElement.innerHTML += "<br>Invalid choice, try again!";
+                    }
             }
             //if they choose to do their hw
             else if(anotherActivity == 2)
             {
                 storyElement.innerHTML += "<br>You decided to do your homework, what a good student!";
+                const homeworkOption = prompt(`How long will you do homework?
+                    \n (Enter the number of your choice)
+                    \n 1. 1-3 hours
+                    \n 2. 4-5 hours`);
+                    //if they choose 1-3h
+                    if(homeworkOption == 1)
+                    {
+                        storyElement.innerHTML += "<br>You decided to do hw for 1-3 hours, hope you get a good grade!";
+                    }
+                    //if they choose 1-5h
+                    else if(homeworkOption == 2)
+                    {
+                        storyElement.innerHTML += "<br>You decided to do hw for 4-5 hours, hope you get a good grade!";
+                    }
+                    //if they choose wrong number
+                    else
+                    {
+                        storyElement.innerHTML += "<br>Invalid choice, try again!";
+                    }
             }
             //if they enter a wrong number
             else
