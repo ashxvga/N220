@@ -164,7 +164,7 @@ window.onload = function startStory(){
         //if they choose to leave the kitchen
         else if(notWatchingBunny == 2)
         {
-            storyElement.innerHTML += "<br>You decided to not get a closer look through the glass door. How boring!";
+            storyElement.innerHTML += "<br>You decided to leave the kitchen.";
             const anotherActivity = prompt(`As you decided to leave the kitchen, what do what to do next?
                 \n (Enter the number of your choice)
                 \n 1. Go to Sleep
