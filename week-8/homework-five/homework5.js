@@ -12,7 +12,7 @@ window.onload = function startStoty(){
     //If they choose yes
     if(closerLook == 1)
     {
-        storyElement.innerHTML += "You decided to get a closer look through the glass door";
+        storyElement.innerHTML += "<br>You decided to get a closer look through the glass door";
         //Ask them to make another decision
 
         const watchingBunny = promt(`The bunny notices you and stops eating.
@@ -25,7 +25,7 @@ window.onload = function startStoty(){
         //if they choose to stay still
         if(watchingBunny == 1)
         {
-            storyElement.innerHTML += "You stayed still, and the bunny continues eating.";
+            storyElement.innerHTML += "<br>You stayed still, and the bunny continues eating.";
             const takePhoto = confirm("Do you want to take a picture of the bunny?");
             if(takePhoto)
             {
@@ -43,18 +43,18 @@ window.onload = function startStoty(){
             const openDoor = confirm(`Are you sure you want to open the door?`)
             if(openDoor)
                 {
-                    storyElement.innerHTML += "The door makes a sound as you are opening it, and the bunny gets scared and runs away! :(";
+                    storyElement.innerHTML += "<br>The door makes a sound as you are opening it, and the bunny gets scared and runs away! :(";
                 }
                 else
                 {
-                    storyElement.innerHTML += "You decide not to open the door, and the bunny keeps looking at you while it eats.";
+                    storyElement.innerHTML += "<br>You decide not to open the door, and the bunny keeps looking at you while it eats.";
                 }
         };
         
     }
     else if(closerLook == 2)
     {
-        storyElement.innerHTML += "You decided to not get a closer look through the glass door. How boring!";
+        storyElement.innerHTML += "<br>You decided to not get a closer look through the glass door. How boring!";
         const notWatchingBunny = promt(`As you decided to not look at the bunny, what do what to do next?
             \n (Enter the number of your choice)
             \n 1. Keep looking for the snack because you are hungry
@@ -63,7 +63,7 @@ window.onload = function startStoty(){
         if(notWatchingBunny == 1)
         {
             //choose a snack
-            storyElement.innerHTML += "You decided to keep looking for a snack";
+            storyElement.innerHTML += "<br>You decided to keep looking for a snack";
             const snacks = promt(`You found two types of snacks, which one do you want?
             \n (Enter the number of your choice)
             \n 1. Takis
@@ -72,23 +72,23 @@ window.onload = function startStoty(){
             //if they choose takis
             if(snacks == 1)
             {
-                storyElement.innerHTML += "You decided to some takis, enjoy them!";
+                storyElement.innerHTML += "<br>You decided to some takis, enjoy them!";
             }
             //if they choose cookies
             else if(snacks == 2)
             {
-                storyElement.innerHTML += "You decided to some cookies, enjoy them!";
+                storyElement.innerHTML += "<br>You decided to some cookies, enjoy them!";
             }
             //if they enter a wrong number
             else
             {
-                storyElement.innerHTML += "Invalid choice, try again!";
+                storyElement.innerHTML += "<br>Invalid choice, try again!";
             }
         }
         //if they choose to leave the kitchen
         else if(notWatchingBunny == 2)
         {
-            storyElement.innerHTML += "You decided to not get a closer look through the glass door. How boring!";
+            storyElement.innerHTML += "<br>You decided to not get a closer look through the glass door. How boring!";
             const anotherActivity = promt(`As you decided to leave the kitchen, what do what to do next?
                 \n (Enter the number of your choice)
                 \n 1. Go to Sleep
@@ -96,24 +96,24 @@ window.onload = function startStoty(){
             //if they choose to go to sleep
             if(anotherActivity == 1)
             {
-                storyElement.innerHTML += "You decided to go to sleep, hope you can rest!";
+                storyElement.innerHTML += "<br>You decided to go to sleep, hope you can rest!";
             }
             //if they choose to do their hw
             else if(snacks == 2)
             {
-                storyElement.innerHTML += "You decided to do your homework, what a good student!";
+                storyElement.innerHTML += "<br>You decided to do your homework, what a good student!";
             }
             //if they enter a wrong number
             else
             {
-                storyElement.innerHTML += "Invalid choice, try again!";
+                storyElement.innerHTML += "<br>Invalid choice, try again!";
             }
         }
     }
     //if they choose a wrong number
     else
     {
-        storyElement.innerHTML += "Invalid choice, try again!";
+        storyElement.innerHTML += "<br>Invalid choice, try again!";
     }
 
 
