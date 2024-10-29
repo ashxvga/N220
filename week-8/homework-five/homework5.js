@@ -116,20 +116,20 @@ window.onload = function startStory(){
                     \n 1. Soda
                     \n 2. Juice`);
                     //if they choose soda
-                    if(drinks == 1)
-                    {
-                        storyElement.innerHTML += "<br>You decided to drink some soda, enjoy it!";
-                    }
-                    //if they choose juice
-                    else if(drinks == 2)
-                    {
-                        storyElement.innerHTML += "<br>You decided to drink some juice, enjoy it!";
-                    }
-                    //if they choose wrong number
-                    else
-                    {
-                        storyElement.innerHTML += "<br>Invalid choice, try again!";
-                    }
+                if(drinks == 1)
+                {
+                    storyElement.innerHTML += "<br>You decided to drink some soda, enjoy it!";
+                }
+                //if they choose juice
+                else if(drinks == 2)
+                {
+                    storyElement.innerHTML += "<br>You decided to drink some juice, enjoy it!";
+                }
+                //if they choose wrong number
+                else
+                {
+                    storyElement.innerHTML += "<br>Invalid choice, try again!";
+                }
             }
             //if they choose cookies
             else if(snacks == 2)
@@ -139,21 +139,21 @@ window.onload = function startStory(){
                     \n (Enter the number of your choice)
                     \n 1. Soda
                     \n 2. Milk`);
-                    //if they choose soda
-                    if(drinks == 1)
-                    {
-                        storyElement.innerHTML += "<br>You decided to drink some soda, enjoy it!";
-                    }
-                    //if they choose juice
-                    else if(drinks == 2)
-                    {
-                        storyElement.innerHTML += "<br>You decided to drink some milk, enjoy it!";
-                    }
-                    //if they choose wrong number
-                    else
-                    {
-                        storyElement.innerHTML += "<br>Invalid choice, try again!";
-                    }
+                //if they choose soda
+                if(drinks == 1)
+                {
+                    storyElement.innerHTML += "<br>You decided to drink some soda, enjoy it!";
+                }
+                //if they choose juice
+                else if(drinks == 2)
+                {
+                    storyElement.innerHTML += "<br>You decided to drink some milk, enjoy it!";
+                }
+                //if they choose wrong number
+                else
+                {
+                    storyElement.innerHTML += "<br>Invalid choice, try again!";
+                }
             }
             //if they enter a wrong number
             else
@@ -178,20 +178,20 @@ window.onload = function startStory(){
                     \n 1. 1-3 hours
                     \n 2. 4-5 hours`);
                     //if they choose 1-3h
-                    if(sleepOption == 1)
-                    {
-                        storyElement.innerHTML += "<br>You decided to sleep for 1-3 hours, hope you can rest!";
-                    }
-                    //if they choose 4-5
-                    else if(sleepOption == 2)
-                    {
-                        storyElement.innerHTML += "<br>You decided to sleep for 4-5 hours, hope you can rest!";
-                    }
-                    //if they choose wrong number
-                    else
-                    {
-                        storyElement.innerHTML += "<br>Invalid choice, try again!";
-                    }
+                if(sleepOption == 1)
+                {
+                    storyElement.innerHTML += "<br>You decided to sleep for 1-3 hours, hope you can rest!";
+                }
+                //if they choose 4-5
+                else if(sleepOption == 2)
+                {
+                    storyElement.innerHTML += "<br>You decided to sleep for 4-5 hours, hope you can rest!";
+                }
+                //if they choose wrong number
+                else
+                {
+                    storyElement.innerHTML += "<br>Invalid choice, try again!";
+                }
             }
             //if they choose to do their hw
             else if(anotherActivity == 2)
@@ -201,21 +201,21 @@ window.onload = function startStory(){
                     \n (Enter the number of your choice)
                     \n 1. 1-3 hours
                     \n 2. 4-5 hours`);
-                    //if they choose 1-3h
-                    if(homeworkOption == 1)
-                    {
-                        storyElement.innerHTML += "<br>You decided to do hw for 1-3 hours, hope you get a good grade!";
-                    }
-                    //if they choose 1-5h
-                    else if(homeworkOption == 2)
-                    {
-                        storyElement.innerHTML += "<br>You decided to do hw for 4-5 hours, hope you get a good grade!";
-                    }
-                    //if they choose wrong number
-                    else
-                    {
-                        storyElement.innerHTML += "<br>Invalid choice, try again!";
-                    }
+                //if they choose 1-3h
+                if(homeworkOption == 1)
+                {
+                    storyElement.innerHTML += "<br>You decided to do hw for 1-3 hours, hope you get a good grade!";
+                }
+                //if they choose 1-5h
+                else if(homeworkOption == 2)
+                {
+                    storyElement.innerHTML += "<br>You decided to do hw for 4-5 hours, hope you get a good grade!";
+                }
+                //if they choose wrong number
+                else
+                {
+                    storyElement.innerHTML += "<br>Invalid choice, try again!";
+                }
             }
             //if they enter a wrong number
             else
