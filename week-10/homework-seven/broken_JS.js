@@ -20,7 +20,11 @@ function RPS(PlayerChoice) {
    * I took out the boolean inside compDecision and fixed the square brakets + parenthesis
    * I fixed the = signs inside the conditions and when adding to the score
    * I changed the individual if statements to make them nested
-   * I also fixed the indentation 
+   * I also fixed the indentation
+   * Score logic of the game:
+   * Wins: +1
+   * Loses: -1
+   * Ties: -0.5
    */
   
   //for draw
