@@ -1,7 +1,7 @@
 //console.log('Dont look in the box');
 const theBoxRef = document.getElementById("theBox");
 const boxFormRef = document.getElementById("boxForm");
-console.log(boxFormRef);
+//console.log(boxFormRef);
 
 theBoxRef.style.border = "3px solid black";
 theBoxRef.style.minHeight = "300px";
@@ -42,6 +42,8 @@ function clickBox(e)
     }
     //console.log(e.currentTarget);
     //e.currentTarget.style.backgroundColor = "red";
+
+    //debugger;
 
     boxFormRef.style.display = "block";
     document.getElementById("boxText").value = e.currentTarget.dataset.text;
