@@ -1,5 +1,7 @@
 //console.log('Dont look in the box');
 const theBoxRef = document.getElementById("theBox");
+const boxFormRef = document.getElementById("boxForm");
+console.log(boxFormRef);
 
 theBoxRef.style.border = "3px solid black";
 theBoxRef.style.minHeight = "300px";
@@ -14,9 +16,11 @@ function addToBox(){
     newDiv.style.width = "100px";
     newDiv.style.backgroundColor = "lightgrey";
     newDiv.style.margin = "5px";
-    //adds the class to the box
+    //adds the class as box
     newDiv.classList.add("box");
     newDiv.innerHTML = newThing;
+
+    newDiv.dataset.text = newThing;
 
     theBoxRef.appendChild(newDiv);
     const allBoxes = document.querySelectorAll(".box");
@@ -36,20 +40,18 @@ function clickBox(e)
     {
         e.currentTarget.style.backgroundColor = "red";
     }
-    console.log(e.currentTarget);
-    e.currentTarget.style.backgroundColor = "red";
-    //getting the section id
-    sectionRef = document.getElementById("boxForm");
-    sectionRef.style.display = "grid";
-    
+    //console.log(e.currentTarget);
+    //e.currentTarget.style.backgroundColor = "red";
+
+    boxFormRef.style.display = "block";
+    document.getElementById("boxText").value = e.currentTarget.dataset.text;
+    document.getElementById("changeBox").onclick = changeText.bind(e.currentTarget);
 }
 
-//function used by button that changes the text
-function changeBox(e)
+function changeText()
 {
-    //getting the input
-    inputValueRef = document.getElementById("boxText").value;
-    e.currentTarget.innerHTML = inputValueRef;
+    //console.log(this);
+    this.innerHTML = document.getElementById("boxText").value;
 
 }
 

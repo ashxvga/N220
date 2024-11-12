@@ -9,7 +9,6 @@
     <h1> In the Box </h1>
     <button onclick="addToBox()">Add to the Box</button>
     <section id="theBox"></section>
-    <script src="thebox.js"></script>
     <button onclick="toggleTheBoxHidden()"> Toggle Hidden </button>
     <section id="boxForm" style="display: none;">
         <div>
@@ -17,8 +16,10 @@
             <input type="text" name="boxText" id="boxText"/>
         </div>
         <div>
-            <button id="changeBox" onclick="changeBox()">Change Box</button>
+            <button id="changeBox">Change Box</button>
         </div>
     </section>
+    
+    <script src="thebox.js"></script>
 </body>
 </html>
