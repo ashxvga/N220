@@ -38,6 +38,19 @@ function clickBox(e)
     }
     console.log(e.currentTarget);
     e.currentTarget.style.backgroundColor = "red";
+    //getting the section id
+    sectionRef = document.getElementById("boxForm");
+    sectionRef.style.display = "grid";
+    
+}
+
+//function used by button that changes the text
+function changeBox(e)
+{
+    //getting the input
+    inputValueRef = document.getElementById("boxText").value;
+    e.currentTarget.innerHTML = inputValueRef;
+
 }
 
 function toggleTheBoxHidden()
