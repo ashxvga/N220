@@ -1,4 +1,4 @@
-### Project Name
+### Personal Task Manager
 
 Final Project
 
@@ -16,3 +16,20 @@ https://ashxvga.github.io/N220/final-project
     - password contains no numbers
 - Events:
     - on login button click check login
+
+**Dashboard**
+- DOM references:
+- Logic:
+    - user logged in => show who is logged in
+    - user only sees tasks they have created
+- Events:
+    - on logout button click check logout
+
+**Tasks**
+- **Add**
+    - DOM references
+    - Logic:
+        - adds a new tasks to the list
+        - 
+        -
+    - Events:
