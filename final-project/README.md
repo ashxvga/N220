@@ -3,7 +3,7 @@
 Final Project
 
 ### Github Link
-https://ashxvga.github.io/N220/final-project
+https://ashxvga.github.io/N220/final-project/index.html
 ### Major Features Overview
 
 **Login Form**
