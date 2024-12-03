@@ -3,7 +3,7 @@
 Final Project
 
 ### Github Link
-https://ashxvga.github.io/N220/final-project
+https://ashxvga.github.io/N220/final-project/index.html
 ### Major Features Overview
 
 **Login Form**
@@ -51,8 +51,6 @@ https://ashxvga.github.io/N220/final-project
         - adds a new tasks to the list
         - an if statement checks whether the task name is empty, it will notify the user
         - The task list is an array of objects, where each object represents a task
-    - Data Types:
-        - here
 - **Edit**
     - DOM references: prompt user input, edit button
     - Logic and JS concepts:
