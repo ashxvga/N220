@@ -1,8 +1,28 @@
-function validatePassword(){
+function validatePasswordAndUsername(){
+    //reference to the password
     const passwordRef = document.getElementById("password");
+    //reference to the username
+    const usernameRef = document.getElementById("username");
+    //ref to the div with all the login info
+    const logInDivRef = document.getElementById("loginInfo");
 
     //console.log(password.value);
 
+    //FOR THE USERNAME
+
+    let usernameNotEmpty = false;
+
+    //as long and they do not leave it empty it will work
+    if(usernameRef.value.length >0)
+    {
+        usernameNotEmpty = true;
+       
+    }
+    else{
+        alert("Enter an username");
+    }
+    
+    //FOR THE PASSWORD
 
     let isNotEmpty = false;
     let isLongEnough = false;
@@ -43,6 +63,12 @@ function validatePassword(){
     {
         alert("Woohoo!");
         passwordRef.value = "";
+        //this will hide everything related to the login info
+        //which is inside a div
+        logInDivRef.style.visibility = "hidden";
+        //reference: freeCodeCamp.org. (2020, February 25). How to hide a conditionally? The FreeCodeCamp Forum. https://forum.freecodecamp.org/t/how-to-hide-a-div-conditionally/353436
+
+
     }
     //in case the password is empty
     else if(isNotEmpty==false){
@@ -66,21 +92,7 @@ function validatePassword(){
     
 }
 
-const newBtn = document.createElement("button");
-newBtn.innerHTML = "Login";
-newBtn.onclick = validatePassword;
-document.body.appendChild(newBtn);
-
-//for the username
-//to make sure the user types in a username
-function validateUsername(){
-    const usernameRef = document.getElementById("password");
-    let usernameNotEmpty = false;
-
-    //as long and they do not leave it empty it will work
-    if(usernameRef.value.length >0)
-        {
-            usernameNotEmpty = true;
-        }
-
-}
+// const newBtn = document.createElement("button");
+// newBtn.innerHTML = "Login";
+// newBtn.onclick = validatePasswordAndUsername;
+// document.body.appendChild(newBtn);
