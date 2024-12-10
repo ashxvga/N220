@@ -70,3 +70,17 @@ const newBtn = document.createElement("button");
 newBtn.innerHTML = "Login";
 newBtn.onclick = validatePassword;
 document.body.appendChild(newBtn);
+
+//for the username
+//to make sure the user types in a username
+function validateUsername(){
+    const usernameRef = document.getElementById("password");
+    let usernameNotEmpty = false;
+
+    //as long and they do not leave it empty it will work
+    if(usernameRef.value.length >0)
+        {
+            usernameNotEmpty = true;
+        }
+
+}
