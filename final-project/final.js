@@ -5,6 +5,8 @@ function validatePasswordAndUsername(){
     const usernameRef = document.getElementById("username");
     //ref to the div with all the login info
     const logInDivRef = document.getElementById("loginInfo");
+    //ref to the dashboard div
+    const dashboardDivRef = document.getElementById("dashboardDiv");
 
     //console.log(password.value);
 
@@ -58,16 +60,19 @@ function validatePasswordAndUsername(){
         }
             
     } 
-    const validPassword = containsNumber && containsUpperCase && isNotEmpty && isLongEnough;
-    if (validPassword)
+    const validPasswordAndUsername = containsNumber && containsUpperCase && isNotEmpty && isLongEnough && usernameNotEmpty;
+    if (validPasswordAndUsername)
     {
-        alert("Woohoo!");
+        //alert("Woohoo!");
         passwordRef.value = "";
         //this will hide everything related to the login info
         //which is inside a div
-        logInDivRef.style.visibility = "hidden";
-        //reference: freeCodeCamp.org. (2020, February 25). How to hide a conditionally? The FreeCodeCamp Forum. https://forum.freecodecamp.org/t/how-to-hide-a-div-conditionally/353436
-
+        logInDivRef.style.display = "none";
+        //maskes the dashboard appear in the screen
+        dashboardDivRef.style.visibility = "visible"
+        dashboardDivRef.style.display = "inline"
+        //this probably will be moved to another function, not sure
+        document.getElementById("welcomeTag").innerHTML += `Welcome, ${usernameRef.value}`
 
     }
     //in case the password is empty
@@ -88,9 +93,12 @@ function validatePasswordAndUsername(){
         alert("Enter a valid password containing at least a number ");
     }
 
-      console.log(validPassword);
+      console.log(validPasswordAndUsername);
     
 }
+
+//to store the users
+
 
 // const newBtn = document.createElement("button");
 // newBtn.innerHTML = "Login";

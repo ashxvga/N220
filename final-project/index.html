@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styling.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styling.css" />
     <title>Personal Task Manager</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Personal Task Manager</h1>
-    
-    <div id="loginInfo">
-    <label>Username</label>
-    <input type="text" name="username" id="username">
-    <br>
-    <label>Password</label>
-    <input type="password" name="password" id="password"> 
-    <br>
-    <button id="loginButton" onclick="validatePasswordAndUsername()">Login</button>
-    </div>   
-    <script src="final.js"></script>
 
-</body>
+    <section id="loginInfo">
+      <label>Username</label>
+      <input type="text" name="username" id="username" />
+      <br />
+      <label>Password</label>
+      <input type="password" name="password" id="password" />
+      <br />
+      <button id="loginButton" onclick="validatePasswordAndUsername()">
+        Login
+      </button>
+    </section>
+    <section id="dashboardDiv" style="visibility: hidden">
+      <h1 id="welcomeTag"></h1>
+      <button id="AddTask" onclick="addTask()">Add Task</button>
+      <button id="LogOutButton" onclick="logOut()">Log Out</button>
+    </section>
+    <script src="final.js"></script>
+  </body>
 </html>
