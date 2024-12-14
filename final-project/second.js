@@ -1,5 +1,4 @@
-
-//to keep track of user's tasks
+// Global variable to store current user's tasks
 let myTasks = []; 
 //reference to the password
 const passwordRef = document.getElementById("password");
@@ -50,7 +49,7 @@ function validatePasswordAndUsername(){
         isLongEnough = true;
         isNotEmpty = true;
     }
-    //same logic as the example we did in class, just changed it to uppercase
+    
     for (let i = 0; i < passwordRef.value.length; i++)
     {
         const currentCharacter = passwordRef.value[i];
@@ -81,18 +80,17 @@ function validatePasswordAndUsername(){
         //this probably will be moved to another function, not sure
         document.getElementById("welcomeTag").innerHTML = `Welcome, ${usernameRef.value}`;
 
-        //this checks if the user exists
-        let userExist = false;
+        // Check if user exists
+        let found = false;
         for (let i = 0; i < theUsers.length; i++) {
             if (theUsers[i].username === usernameRef.value) {
-                myTasks = theUsers[i].tasks; // Load tasks for this user
-                userExist = true;
+                myTasks = [...theUsers[i].tasks]; // Load tasks for this user
+                found = true;
                 break;
             }
         }
-        //if it doesnt exit
-        //it create it and adds it to the users array
-        if (!userExist) {
+        // If user does not exist, create a new user
+        if (!found) {
             theUsers.push({ username: usernameRef.value, tasks: [] });
             myTasks = [];
         }
@@ -138,16 +136,14 @@ function addTask(){
     //add task to my tasks list
     myTasks.push({task: taskText, category: "(No Category)", completed: false});
 
-    //makes sure to update the changes
+    // Sync tasks with `theUsers`
     for (let i = 0; i < theUsers.length; i++) {
         if (theUsers[i].username === usernameRef.value) {
-            theUsers[i].tasks = [];
-            for (let j = 0; j < myTasks.length; j++) {
-                theUsers[i].tasks.push(myTasks[j]);
-            }
+            theUsers[i].tasks = [...myTasks];
             break;
         }
     }
+
     //call function to show them
     showTasks();
 }
@@ -166,12 +162,10 @@ function removeTask(taskName){
     //remove the task from the list
     myTasks.splice(taskIndex, 1);
 
+    // Sync tasks with `theUsers`
     for (let i = 0; i < theUsers.length; i++) {
         if (theUsers[i].username === usernameRef.value) {
-            theUsers[i].tasks = [];
-            for (let j = 0; j < myTasks.length; j++) {
-                theUsers[i].tasks.push(myTasks[j]);
-            }
+            theUsers[i].tasks = myTasks;
             break;
         }
     }
@@ -188,6 +182,7 @@ function showTasks(){
     myTasks.forEach(function(tasks, taskIndex){
         //add the tasks to the tasks list
         //added "style="display: inline"" to make them be in the same line
+        //found 
         taskListRef.innerHTML += `<li class="task">
     <span onclick="markingComplete('${taskIndex}', event.currentTarget)" style="${tasks.completed ? 'text-decoration: line-through;' : ''}"><h3 style="display: inline;">${tasks.task}</h3><h3 style="display: inline"> ${tasks.category}</h3></span>
     <br>
@@ -225,7 +220,7 @@ function changeText(taskName) {
             break;
         }
     }
-    //makes sure to update changes
+    // Sync tasks with `theUsers`
     for (let i = 0; i < theUsers.length; i++) {
         if (theUsers[i].username === usernameRef.value) {
             theUsers[i].tasks = myTasks;
@@ -249,35 +244,17 @@ function changeCategory(taskIndex, newCategory){
 
 }
 
-//my understanding of the function:
 
-//it puts or takes off the strike-through based on the completed status
-//if the task is completed it add a line-through style
-//if the task is incomplete it removes the line-through
-
-function markingComplete(taskIndex, currentTask) {
-    //my understanding of this line:
-
-    //ifthe task was set as complete (true) it will now be set to false
-    //if it was incomplete (false) it will now be true
-    myTasks[taskIndex].completed = !myTasks[taskIndex].completed;
-
-    
-    if (myTasks[taskIndex].completed) {
-        currentTask.style.textDecoration = 'line-through';
-    } else {
-        currentTask.style.textDecoration = 'none';
-    }
-
-    //same as logic as the others
-    //makes sure to have the correct user
-    //ties the tasks with the changes to the array of the tasks
-    for (let i = 0; i < theUsers.length; i++) {
-        if (theUsers[i].username === usernameRef.value) {
-            theUsers[i].tasks = myTasks;
-            break;
+function markingComplete(taskIndex, element) {
+    // Toggle the strike-through style on the clicked task
+    const h3Elements = element.querySelectorAll('h3');
+    h3Elements.forEach(h3 => {
+        if (h3.style.textDecoration === 'line-through') {
+            h3.style.textDecoration = 'none';
+        } else {
+            h3.style.textDecoration = 'line-through';
         }
-    }
+    });
 }
 
 
