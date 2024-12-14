@@ -1,3 +1,57 @@
+/*
+My sources:
+freeCodeCamp.org. (2020, February 25). How to hide a conditionally? The FreeCodeCamp Forum. https://forum.freecodecamp.org/t/how-to-hide-a-div-conditionally/353436
+W3Schools. (n.d.). HTML DOM Style display Property. Www.w3schools.com. https://www.w3schools.com/Jsref/prop_style_display.asp
+OpenAI. (2024). ChatGPT (Version 4.0) [Large language model]
+
+What I used them for:
+I used freeCodeCamp and W3Schools to help me guide myself on how to hide and unhide the login div and dashboard
+I also used the help of the professor to fix them
+ChatGPT: Asked for suggestions and troubleshoot tips
+
+FOR SUGGESTIONS:
+ChatGpt
+I had already completed the validation to password and user, show, delete, and change functions
+using our class examples to guide myself (Mainly our code from week 8 and 13)
+All of those functions worked correctly, but I was not tying the tasks to any user
+I asked it to recommend me different approaches to incorporate my users array
+Its recommendation was to have:
+- a global variable to track the user's tasks
+- if statements to check is a user already exist
+- if statements to check if it doesnt exit while adding it to the users array
+
+TO TROUBLESHOOT:
+- To troubleshoot my for loop to update changes in the array
+
+suggestions it made: 
+- to add break statement
+- to change my original variable i to j to avoid issues inside the loop
+
+when it finds the correct user:
+It clears their current tasks.
+it copies all the tasks from the logged in user's myTask list to that user's task list.
+
+for (let i = 0; i < theUsers.length; i++) {
+        if (theUsers[i].username === usernameRef.value) {
+            theUsers[i].tasks = [];
+            for (let j = 0; j < myTasks.length; j++) {
+                theUsers[i].tasks.push(myTasks[j]);
+            }
+            break;
+        }
+    }
+
+- I also used it to help me fix my markingComplete function as it was not working correctly
+It recommend me to add the following line to my span tag to make sure my completed status was checked correctly
+style="${tasks.completed ? 'text-decoration: line-through;' : ''}"
+
+It also recommend me to add the following line to make sure the completed status was being set correctly:
+myTasks[taskIndex].completed = !myTasks[taskIndex].completed;
+
+I made sure to add my understanding of the code inside the function.
+
+*/ 
+
 
 //to keep track of user's tasks
 let myTasks = []; 
@@ -10,6 +64,7 @@ const logInDivRef = document.getElementById("loginInfo");
 //ref to the dashboard div
 const dashboardDivRef = document.getElementById("dashboardDiv");
 
+//to keep trak of the users
 const theUsers = [];
 
 //function to validate both the username and password
@@ -81,11 +136,11 @@ function validatePasswordAndUsername(){
         //this probably will be moved to another function, not sure
         document.getElementById("welcomeTag").innerHTML = `Welcome, ${usernameRef.value}`;
 
-        //this checks if the user exists
+        //this checks if the user exists and gives it their tasks
         let userExist = false;
         for (let i = 0; i < theUsers.length; i++) {
             if (theUsers[i].username === usernameRef.value) {
-                myTasks = theUsers[i].tasks; // Load tasks for this user
+                myTasks = theUsers[i].tasks;
                 userExist = true;
                 break;
             }
@@ -117,11 +172,12 @@ function validatePasswordAndUsername(){
         alert("Enter a valid password containing at least a number ");
     }
 
-      console.log(validPasswordAndUsername);
+      //console.log(validPasswordAndUsername);
     
 }
 
 //Used similar logic as the friends list we did in class (Week-8)
+//most of them are the same
 
 //refence to my list in the html
 const taskListRef = document.getElementById("taskList");
@@ -139,6 +195,8 @@ function addTask(){
     myTasks.push({task: taskText, category: "(No Category)", completed: false});
 
     //makes sure to update the changes
+    //It clears their current tasks.
+    //it copies all the tasks from the logged in user's myTask list to that user's task list
     for (let i = 0; i < theUsers.length; i++) {
         if (theUsers[i].username === usernameRef.value) {
             theUsers[i].tasks = [];
@@ -166,6 +224,8 @@ function removeTask(taskName){
     //remove the task from the list
     myTasks.splice(taskIndex, 1);
 
+    //same logic as the one in the add
+    //makes sure to update the changes
     for (let i = 0; i < theUsers.length; i++) {
         if (theUsers[i].username === usernameRef.value) {
             theUsers[i].tasks = [];
@@ -225,7 +285,7 @@ function changeText(taskName) {
             break;
         }
     }
-    //makes sure to update changes
+    //makes sure to update changes, same logic as the one in to add
     for (let i = 0; i < theUsers.length; i++) {
         if (theUsers[i].username === usernameRef.value) {
             theUsers[i].tasks = myTasks;
@@ -262,6 +322,8 @@ function markingComplete(taskIndex, currentTask) {
     //if it was incomplete (false) it will now be true
     myTasks[taskIndex].completed = !myTasks[taskIndex].completed;
 
+    //(OpenAI, 2024)
+
     
     if (myTasks[taskIndex].completed) {
         currentTask.style.textDecoration = 'line-through';
@@ -291,7 +353,6 @@ function logOut()
     //maskes the login appear in the screen
     logInDivRef.style.visibility = "visible"
     logInDivRef.style.display = "inline"
-
     myTasks = [];
     
 }
