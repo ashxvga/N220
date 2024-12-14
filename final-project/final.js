@@ -1,13 +1,15 @@
-function validatePasswordAndUsername(){
-    //reference to the password
-    const passwordRef = document.getElementById("password");
-    //reference to the username
-    const usernameRef = document.getElementById("username");
-    //ref to the div with all the login info
-    const logInDivRef = document.getElementById("loginInfo");
-    //ref to the dashboard div
-    const dashboardDivRef = document.getElementById("dashboardDiv");
+//reference to the password
+const passwordRef = document.getElementById("password");
+//reference to the username
+const usernameRef = document.getElementById("username");
+//ref to the div with all the login info
+const logInDivRef = document.getElementById("loginInfo");
+//ref to the dashboard div
+const dashboardDivRef = document.getElementById("dashboardDiv");
 
+//function to validate both the username and password
+function validatePasswordAndUsername(){
+    
     //console.log(password.value);
 
     //FOR THE USERNAME
@@ -97,10 +99,129 @@ function validatePasswordAndUsername(){
     
 }
 
-//to store the users
+//Used similar logic as the friends list we did in class (Week-8)
+
+//refence to my list in the html
+const taskListRef = document.getElementById("taskList");
+
+//variable to track my tasks
+const myTasks = [];
+
+//function to add tasks
+function addTask(){
+
+    //get what the user types in the prompt
+    const taskText = prompt("New task:");
+
+    //add task to my tasks list
+    myTasks.push({task: taskText, category: "(No Category)", completed: false});
+
+    //call function to show them
+    showTasks();
+}
+function removeTask(taskName){
+    //Use variable to track index of task to remove
+    let taskIndex;
+    
+    //loop through current tasks to find the taskName
+    for(let i =0; i < myTasks.length; i++)
+    {
+        //This is saying  if it match the taskName, that's the index i want
+        if(myTasks[i].name=== taskName){
+            taskIndex = i;
+        }
+    }
+    //remove the task from the list
+    myTasks.splice(taskIndex, 1);
+    //call function again
+    showTasks(); 
+
+}
+
+//function to loop through myTasks and show them on the page
+function showTasks(){
+    taskListRef.innerHTML = "";
+
+    //loop through tasks
+    myTasks.forEach(function(tasks, taskIndex){
+        //add the tasks to the tasks list
+        //added "style="display: inline"" to make them be in the same line
+        //found 
+        taskListRef.innerHTML += `<li class="task">
+    <span onclick="markingComplete('${taskIndex}', event.currentTarget)" style="${tasks.completed ? 'text-decoration: line-through;' : ''}"><h3 style="display: inline;">${tasks.task}</h3><h3 style="display: inline"> ${tasks.category}</h3></span>
+    <br>
+    
+    <button class="red" onclick="removeTask('${tasks.task}')">Remove</button>
+    <button class="blue" onclick="changeText('${tasks.task}')">Change Text </button>
+    <select onchange="changeCategory('${taskIndex}', event.currentTarget)" name="categories" id="categories">
+    <option value="category">Choose category</option>
+    <option value="outdoors">Outdoor</option>
+    <option value="indoor">Indoor</option>
+    </select>
+    </li>`;
+    });
+}
+
+//function to change the text inside the task
+function changeText(taskName) {
+
+    //used a forloop to loop through the tasks to find the one that matches
+    for (let i = 0; i < myTasks.length; i++) {
+        if (myTasks[i].task === taskName) {
+            //to ask the user for the new task
+            //added the myTasks[i].task to make sure it is kept in the prompt like in the demo
+
+            const newTaskName = prompt("New Name", myTasks[i].task);
+
+            //to update the text inside the task
+            myTasks[i].task = newTaskName;
+
+            //calling the function againn
+            showTasks();
+
+            //had to add this to make it stop
+            return;
+        }
+    }
+}
+
+//to change the categories
+//used similar logic to the changing color function in the friend list we did in class
+//just used the `` to make sure i still keep the cateogy inside the ()
+
+function changeCategory(taskIndex, newCategory){
+    
+    const taskName = myTasks[taskIndex].task;
+
+    //to get the new category
+    myTasks.splice(taskIndex, 1, {task: taskName, category: `(${newCategory.value})`});
+    showTasks();
+
+}
 
 
-// const newBtn = document.createElement("button");
-// newBtn.innerHTML = "Login";
-// newBtn.onclick = validatePasswordAndUsername;
-// document.body.appendChild(newBtn);
+function markingComplete(taskIndex, element) {
+    // Toggle the strike-through style on the clicked task
+    const h3Elements = element.querySelectorAll('h3');
+    h3Elements.forEach(h3 => {
+        if (h3.style.textDecoration === 'line-through') {
+            h3.style.textDecoration = 'none';
+        } else {
+            h3.style.textDecoration = 'line-through';
+        }
+    });
+}
+
+
+//function to log out
+function logOut()
+{
+    usernameRef.value = "";
+    passwordRef.value = "";
+    //this will hide everything related to the dashboard
+    dashboardDivRef.style.display = "none";
+    //maskes the login appear in the screen
+    logInDivRef.style.visibility = "visible"
+    logInDivRef.style.display = "inline"
+    
+}
